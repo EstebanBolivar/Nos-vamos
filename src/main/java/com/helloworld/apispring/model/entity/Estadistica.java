@@ -1,5 +1,6 @@
 package com.helloworld.apispring.model.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,8 @@ public class Estadistica {
     @Column(name = "id_estadistica")
     private Integer idestadistica;
 
-    @Column(name = "viaje_anterior")//duda
-    private String viajeanterior;
+    @Column(name = "viajes_anteriores")
+    private String viajesanteriores;
     
     @Column(name = "proximo_viaje")
     private String proximoviaje;
@@ -34,10 +35,9 @@ public class Estadistica {
     @Column(name = "precio_viaje")
     private Integer precioviaje;
     
+    //@ManyToOne(mappedBy = "Viaje")
     @JoinColumn(name = "id_viaje")
     private Viaje idviaje;  
-    
-    //@ManyToOne(mappedby = "Viaje", cascade = CascadeType )//duda
 
     public Estadistica() {
     }
@@ -48,14 +48,6 @@ public class Estadistica {
 
     public void setIdestadistica(Integer idestadistica) {
         this.idestadistica = idestadistica;
-    }
-
-    public String getViajeanterior() {
-        return viajeanterior;
-    }
-
-    public void setViajeanterior(String viajeanterior) {
-        this.viajeanterior = viajeanterior;
     }
 
     public String getProximoviaje() {
@@ -73,6 +65,15 @@ public class Estadistica {
     public void setViajemaspublicado(String viajemaspublicado) {
         this.viajemaspublicado = viajemaspublicado;
     }
+
+    public String getViajesanteriores() {
+        return viajesanteriores;
+    }
+
+    public void setViajesanteriores(String viajesanteriores) {
+        this.viajesanteriores = viajesanteriores;
+    }
+    
 
     public Integer getCantidadcupos() {
         return cantidadcupos;

@@ -22,17 +22,14 @@ public class Usuario {
     @Column(name = "apellido_usuario")
     private String apellidousuario;
 
-    @Column
+    @Column (name = "fecha_nacimiento")
     private Integer fechanacimiento;
      
-    @Column
+    @Column (name = "telefono")
     private Integer telefono;
     
-    @Column
+    @Column (name = "direccion")
     private String direccion;
-    
-    @Column
-    private Integer Tipousuario;  
 
     public Usuario() {
     }
@@ -84,12 +81,4 @@ public class Usuario {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
-    public Integer getTipousuario() {
-        return Tipousuario;
-    }
-
-    public void setTipousuario(Integer Tipousuario) {
-        this.Tipousuario = Tipousuario;
-    }   
 }
