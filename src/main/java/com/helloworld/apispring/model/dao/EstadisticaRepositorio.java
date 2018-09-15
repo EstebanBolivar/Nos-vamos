@@ -26,8 +26,6 @@ public class EstadisticaRepositorio {
 
     public List<Estadistica> getAllEstadistica() {
         Criteria criteria = getSessionFactory().getCurrentSession().createCriteria(Estadistica.class);
-        criteria.add(Restrictions.lt("rank", 10));//duda
-        criteria.add(Restrictions.eq("confederation", "UEFA"));//duda
         return criteria.list();
     }
 
